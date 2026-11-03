@@ -1,0 +1,2430 @@
+{
+ "version": 1,
+ "built": "2026-10-28",
+ "vendors": [
+  {
+   "id": "google-cloud",
+   "name": "Google Cloud",
+   "category": "cloud",
+   "status": {
+    "kind": "gcp-incidents",
+    "url": "https://status.cloud.google.com/incidents.json",
+    "products": "https://status.cloud.google.com/products.json",
+    "poll": 300,
+    "validators": "last-modified"
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://docs.cloud.google.com/feeds/gcp-release-notes.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "google-auth-library",
+     "repo": "googleapis/google-auth-library-nodejs"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@google-cloud/",
+     "google-auth-library",
+     "googleapis"
+    ],
+    "pypi": [
+     "google-cloud-"
+    ],
+    "env": [
+     "GOOGLE_",
+     "GCP_",
+     "GCLOUD_"
+    ],
+    "actions": [
+     "google-github-actions/"
+    ],
+    "files": [
+     "app.yaml",
+     "cloudbuild.yaml",
+     "service.yaml"
+    ]
+   },
+   "products": [
+    {
+     "id": "cloud-run",
+     "name": "Cloud Run",
+     "statusMatch": [
+      "Cloud Run"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/run-release-notes.xml"
+     },
+     "detect": {
+      "hosts": [
+       "run.googleapis.com"
+      ],
+      "terraform": [
+       "google_cloud_run"
+      ],
+      "commands": [
+       "gcloud run"
+      ],
+      "actions": [
+       "google-github-actions/deploy-cloudrun"
+      ],
+      "dns": {
+       "cname": [
+        "ghs.googlehosted.com"
+       ],
+       "a": [
+        "216.239.3"
+       ]
+      }
+     }
+    },
+    {
+     "id": "firestore",
+     "name": "Firestore",
+     "statusMatch": [
+      "Cloud Firestore"
+     ],
+     "detect": {
+      "packages": [
+       "@google-cloud/firestore"
+      ],
+      "hosts": [
+       "firestore.googleapis.com"
+      ],
+      "env": [
+       "FIRESTORE_"
+      ],
+      "terraform": [
+       "google_firestore"
+      ]
+     }
+    },
+    {
+     "id": "cloud-storage",
+     "name": "Cloud Storage",
+     "statusMatch": [
+      "Google Cloud Storage"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/storage-release-notes.xml"
+     },
+     "sdks": [
+      {
+       "eco": "npm",
+       "name": "@google-cloud/storage",
+       "repo": "googleapis/nodejs-storage"
+      }
+     ],
+     "detect": {
+      "packages": [
+       "@google-cloud/storage"
+      ],
+      "terraform": [
+       "google_storage"
+      ],
+      "commands": [
+       "gcloud storage",
+       "gsutil"
+      ]
+     }
+    },
+    {
+     "id": "bigquery",
+     "name": "BigQuery",
+     "statusMatch": [
+      "Google BigQuery"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/bigquery-release-notes.xml"
+     },
+     "detect": {
+      "packages": [
+       "@google-cloud/bigquery"
+      ],
+      "hosts": [
+       "bigquery.googleapis.com"
+      ],
+      "env": [
+       "BIGQUERY_"
+      ],
+      "terraform": [
+       "google_bigquery"
+      ]
+     }
+    },
+    {
+     "id": "secret-manager",
+     "name": "Secret Manager",
+     "statusMatch": [
+      "Secret Manager"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/secret-manager-release-notes.xml"
+     },
+     "detect": {
+      "packages": [
+       "@google-cloud/secret-manager"
+      ],
+      "hosts": [
+       "secretmanager.googleapis.com"
+      ],
+      "terraform": [
+       "google_secret_manager"
+      ]
+     }
+    },
+    {
+     "id": "cloud-build",
+     "name": "Cloud Build",
+     "statusMatch": [
+      "Cloud Build"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/cloud-build-release-notes.xml"
+     },
+     "detect": {
+      "files": [
+       "cloudbuild.yaml"
+      ],
+      "terraform": [
+       "google_cloudbuild"
+      ],
+      "commands": [
+       "gcloud builds"
+      ]
+     }
+    },
+    {
+     "id": "cloud-monitoring",
+     "name": "Cloud Monitoring",
+     "statusMatch": [
+      "Cloud Monitoring"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/monitoring-release-notes.xml"
+     },
+     "detect": {
+      "hosts": [
+       "monitoring.googleapis.com"
+      ],
+      "terraform": [
+       "google_monitoring"
+      ]
+     }
+    },
+    {
+     "id": "cloud-logging",
+     "name": "Cloud Logging",
+     "statusMatch": [
+      "Cloud Logging"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/logging-release-notes.xml"
+     },
+     "detect": {
+      "packages": [
+       "@google-cloud/logging"
+      ],
+      "terraform": [
+       "google_logging"
+      ]
+     }
+    },
+    {
+     "id": "cloud-sql",
+     "name": "Cloud SQL",
+     "statusMatch": [
+      "Google Cloud SQL"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/cloud-sql-release-notes.xml"
+     },
+     "detect": {
+      "terraform": [
+       "google_sql"
+      ],
+      "commands": [
+       "gcloud sql"
+      ]
+     }
+    },
+    {
+     "id": "cloud-scheduler",
+     "name": "Cloud Scheduler",
+     "statusMatch": [
+      "Google Cloud Scheduler"
+     ],
+     "detect": {
+      "terraform": [
+       "google_cloud_scheduler"
+      ],
+      "commands": [
+       "gcloud scheduler"
+      ]
+     }
+    },
+    {
+     "id": "vertex-ai",
+     "name": "Vertex AI",
+     "statusMatch": [
+      "Vertex Gemini API",
+      "Vertex AI Online Prediction"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/vertex-ai-release-notes.xml"
+     },
+     "detect": {
+      "packages": [
+       "@google-cloud/vertexai"
+      ],
+      "hosts": [
+       "aiplatform.googleapis.com"
+      ],
+      "env": [
+       "VERTEX_"
+      ],
+      "terraform": [
+       "google_vertex_ai"
+      ]
+     }
+    },
+    {
+     "id": "iap",
+     "name": "Identity-Aware Proxy",
+     "statusMatch": [
+      "Google Cloud Identity-Aware Proxy"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/iap-release-notes.xml"
+     },
+     "detect": {
+      "terraform": [
+       "google_iap"
+      ]
+     }
+    },
+    {
+     "id": "model-armor",
+     "name": "Model Armor",
+     "statusMatch": [
+      "Model Armor"
+     ],
+     "detect": {
+      "terraform": [
+       "google_model_armor"
+      ]
+     }
+    },
+    {
+     "id": "iam",
+     "name": "IAM",
+     "statusMatch": [
+      "Identity and Access Management"
+     ],
+     "detect": {
+      "terraform": [
+       "google_service_account",
+       "google_project_iam"
+      ]
+     }
+    },
+    {
+     "id": "compute",
+     "name": "Compute Engine",
+     "statusMatch": [
+      "Google Compute Engine"
+     ],
+     "changelog": {
+      "kind": "rss",
+      "url": "https://docs.cloud.google.com/feeds/compute-release-notes.xml"
+     },
+     "detect": {
+      "terraform": [
+       "google_compute"
+      ]
+     }
+    },
+    {
+     "id": "artifact-registry",
+     "name": "Artifact Registry",
+     "statusMatch": [
+      "Artifact Registry"
+     ],
+     "detect": {
+      "terraform": [
+       "google_artifact_registry"
+      ],
+      "commands": [
+       "gcloud artifacts"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "firebase",
+   "name": "Firebase",
+   "category": "cloud",
+   "status": {
+    "kind": "gcp-incidents",
+    "url": "https://status.firebase.google.com/incidents.json",
+    "poll": 300,
+    "validators": "last-modified"
+   },
+   "changelog": {
+    "kind": "page",
+    "url": "https://firebase.google.com/support/releases",
+    "reader": "firebase-releases"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "firebase",
+     "repo": "firebase/firebase-js-sdk"
+    },
+    {
+     "eco": "npm",
+     "name": "firebase-admin",
+     "repo": "firebase/firebase-admin-node"
+    },
+    {
+     "eco": "swift",
+     "name": "firebase-ios-sdk",
+     "repo": "firebase/firebase-ios-sdk"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "firebase",
+     "firebase-admin"
+    ],
+    "swift": [
+     "firebase-ios-sdk"
+    ],
+    "files": [
+     "firebase.json"
+    ],
+    "commands": [
+     "firebase deploy"
+    ],
+    "dns": {
+     "cname": [
+      "web.app",
+      "firebaseapp.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "aws",
+   "name": "AWS",
+   "category": "cloud",
+   "status": {
+    "kind": "aws-health",
+    "url": "https://health.aws.amazon.com/public/currentevents",
+    "poll": 900,
+    "validators": "none",
+    "encoding": "utf-16"
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@aws-sdk/client-s3",
+     "repo": "aws/aws-sdk-js-v3"
+    },
+    {
+     "eco": "pypi",
+     "name": "boto3",
+     "repo": "boto/boto3"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@aws-sdk/",
+     "aws-sdk"
+    ],
+    "pypi": [
+     "boto3"
+    ],
+    "env": [
+     "AWS_"
+    ],
+    "terraform": [
+     "aws_"
+    ],
+    "commands": [
+     "aws s3",
+     "aws lambda"
+    ],
+    "actions": [
+     "aws-actions/"
+    ],
+    "dns": {
+     "ns": [
+      "awsdns"
+     ],
+     "cname": [
+      "cloudfront.net"
+     ],
+     "mx": [
+      "amazonaws.com"
+     ],
+     "spf": [
+      "amazonses.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "azure",
+   "name": "Azure",
+   "category": "cloud",
+   "status": {
+    "kind": "rss",
+    "url": "https://azure.status.microsoft/en-us/status/feed/",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@azure/identity",
+     "repo": "Azure/azure-sdk-for-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@azure/"
+    ],
+    "dns": {
+     "ns": [
+      "azure-dns"
+     ],
+     "cname": [
+      "azurewebsites.net"
+     ]
+    }
+   },
+   "note": "Often pulled in by the OpenAI SDK (@azure/core-*); shown as \"via OpenAI SDK\", not counted, unless used directly."
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.cloudflarestatus.com/api/v2/summary.json",
+    "history": "https://www.cloudflarestatus.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://developers.cloudflare.com/changelog/rss.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "wrangler",
+     "repo": "cloudflare/workers-sdk"
+    }
+   ],
+   "detect": {
+    "files": [
+     "wrangler.toml"
+    ],
+    "terraform": [
+     "cloudflare_"
+    ],
+    "commands": [
+     "wrangler deploy"
+    ],
+    "dns": {
+     "ns": [
+      "cloudflare.com"
+     ],
+     "a": [
+      "104.16.",
+      "104.17.",
+      "172.67."
+     ],
+     "cname": [
+      "pages.dev"
+     ]
+    }
+   }
+  },
+  {
+   "id": "vercel",
+   "name": "Vercel",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.vercel-status.com/api/v2/summary.json",
+    "history": "https://www.vercel-status.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://vercel.com/changelog/rss.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "vercel",
+     "repo": "vercel/vercel"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@vercel/",
+     "vercel"
+    ],
+    "hosts": [
+     "api.vercel.com"
+    ],
+    "env": [
+     "VERCEL_"
+    ],
+    "files": [
+     "vercel.json"
+    ],
+    "terraform": [
+     "vercel_"
+    ],
+    "commands": [
+     "vercel deploy",
+     "vercel --prod"
+    ],
+    "actions": [
+     "amondnet/vercel-action"
+    ],
+    "dns": {
+     "ns": [
+      "vercel-dns.com"
+     ],
+     "cname": [
+      "vercel-dns.com",
+      "vercel.app"
+     ],
+     "a": [
+      "76.76.21."
+     ]
+    }
+   }
+  },
+  {
+   "id": "netlify",
+   "name": "Netlify",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.netlifystatus.com/api/v2/summary.json",
+    "history": "https://www.netlifystatus.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://www.netlify.com/changelog/feed.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "netlify-cli",
+     "repo": "netlify/cli"
+    }
+   ],
+   "detect": {
+    "files": [
+     "netlify.toml"
+    ],
+    "commands": [
+     "netlify deploy"
+    ],
+    "dns": {
+     "ns": [
+      "netlify"
+     ],
+     "cname": [
+      "netlify"
+     ]
+    }
+   }
+  },
+  {
+   "id": "fly",
+   "name": "Fly.io",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.flyio.net/api/v2/summary.json",
+    "history": "https://status.flyio.net/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://community.fly.io/c/fresh-produce.rss"
+   },
+   "sdks": [],
+   "detect": {
+    "files": [
+     "fly.toml"
+    ],
+    "commands": [
+     "fly deploy",
+     "flyctl"
+    ],
+    "dns": {
+     "cname": [
+      "fly.dev"
+     ]
+    }
+   }
+  },
+  {
+   "id": "render",
+   "name": "Render",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.render.com/api/v2/summary.json",
+    "history": "https://status.render.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://render.com/changelog/feed.xml"
+   },
+   "detect": {
+    "files": [
+     "render.yaml"
+    ],
+    "dns": {
+     "cname": [
+      "onrender.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "heroku",
+   "name": "Heroku",
+   "category": "hosting",
+   "status": {
+    "kind": "heroku",
+    "url": "https://status.heroku.com/api/v4/current-status",
+    "poll": 300
+   },
+   "detect": {
+    "files": [
+     "Procfile"
+    ],
+    "dns": {
+     "cname": [
+      "herokudns.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "digitalocean",
+   "name": "DigitalOcean",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.digitalocean.com/api/v2/summary.json",
+    "history": "https://status.digitalocean.com/history.rss",
+    "poll": 60
+   },
+   "detect": {
+    "commands": [
+     "doctl"
+    ]
+   }
+  },
+  {
+   "id": "github-pages",
+   "name": "GitHub Pages",
+   "category": "hosting",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.githubstatus.com/api/v2/summary.json",
+    "history": "https://www.githubstatus.com/history.rss",
+    "poll": 60
+   },
+   "statusMatch": [
+    "Pages"
+   ],
+   "detect": {
+    "dns": {
+     "cname": [
+      "github.io"
+     ],
+     "a": [
+      "185.199.10"
+     ]
+    }
+   }
+  },
+  {
+   "id": "supabase",
+   "name": "Supabase",
+   "category": "data",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.supabase.com/api/v2/summary.json",
+    "history": "https://status.supabase.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://supabase.com/feed.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@supabase/supabase-js",
+     "repo": "supabase/supabase-js"
+    },
+    {
+     "eco": "swift",
+     "name": "supabase-swift",
+     "repo": "supabase/supabase-swift"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@supabase/"
+    ],
+    "swift": [
+     "supabase-swift"
+    ],
+    "hosts": [
+     "supabase.co"
+    ],
+    "env": [
+     "SUPABASE_"
+    ],
+    "commands": [
+     "supabase "
+    ]
+   }
+  },
+  {
+   "id": "mongodb-atlas",
+   "name": "MongoDB Atlas",
+   "category": "data",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.mongodb.com/api/v2/summary.json",
+    "history": "https://status.mongodb.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "mongodb",
+     "repo": "mongodb/node-mongodb-native"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "mongodb",
+     "mongoose"
+    ]
+   }
+  },
+  {
+   "id": "upstash",
+   "name": "Upstash",
+   "category": "data",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.upstash.com/api/v2/summary.json",
+    "history": "https://status.upstash.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@upstash/redis",
+     "repo": "upstash/redis-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@upstash/"
+    ]
+   }
+  },
+  {
+   "id": "planetscale",
+   "name": "PlanetScale",
+   "category": "data",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.planetscalestatus.com/api/v2/summary.json",
+    "history": "https://www.planetscalestatus.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@planetscale/database",
+     "repo": "planetscale/database-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@planetscale/"
+    ]
+   }
+  },
+  {
+   "id": "neon",
+   "name": "Neon",
+   "category": "data",
+   "status": {
+    "kind": "page",
+    "url": "https://neonstatus.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@neondatabase/serverless",
+     "repo": "neondatabase/serverless"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@neondatabase/"
+    ]
+   }
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "category": "ai",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.anthropic.com/api/v2/summary.json",
+    "history": "https://status.anthropic.com/history.rss",
+    "poll": 60
+   },
+   "statusMatch": [
+    "Claude API (api.anthropic.com)"
+   ],
+   "changelog": {
+    "kind": "rss",
+    "url": "https://platform.claude.com/docs/en/release-notes/feed.xml"
+   },
+   "deprecations": {
+    "kind": "page",
+    "url": "https://docs.anthropic.com/en/docs/about-claude/model-deprecations",
+    "reader": "anthropic-deprecations"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@anthropic-ai/sdk",
+     "repo": "anthropics/anthropic-sdk-typescript"
+    },
+    {
+     "eco": "pypi",
+     "name": "anthropic",
+     "repo": "anthropics/anthropic-sdk-python"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@anthropic-ai/"
+    ],
+    "pypi": [
+     "anthropic"
+    ],
+    "hosts": [
+     "api.anthropic.com"
+    ],
+    "env": [
+     "ANTHROPIC_"
+    ],
+    "models": [
+     "claude-"
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "category": "ai",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.openai.com/api/v2/summary.json",
+    "history": "https://status.openai.com/history.rss",
+    "poll": 60
+   },
+   "statusMatch": [
+    "Chat Completions",
+    "Responses",
+    "Agents",
+    "Fine-tuning",
+    "Embeddings",
+    "Images",
+    "Batch",
+    "Audio",
+    "Moderations",
+    "Realtime",
+    "Files",
+    "Conversations"
+   ],
+   "changelog": {
+    "kind": "rss",
+    "url": "https://developers.openai.com/rss.xml"
+   },
+   "deprecations": {
+    "kind": "page",
+    "url": "https://platform.openai.com/docs/deprecations",
+    "reader": "openai-deprecations"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "openai",
+     "repo": "openai/openai-node"
+    },
+    {
+     "eco": "pypi",
+     "name": "openai",
+     "repo": "openai/openai-python"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "openai"
+    ],
+    "pypi": [
+     "openai"
+    ],
+    "hosts": [
+     "api.openai.com"
+    ],
+    "env": [
+     "OPENAI_"
+    ],
+    "models": [
+     "gpt-",
+     "o1-",
+     "o3-",
+     "o4-",
+     "text-embedding-3"
+    ]
+   }
+  },
+  {
+   "id": "gemini-api",
+   "name": "Gemini API",
+   "category": "ai",
+   "status": {
+    "kind": "page",
+    "url": "https://aistudio.google.com/status",
+    "poll": 300
+   },
+   "changelog": {
+    "kind": "page",
+    "url": "https://ai.google.dev/gemini-api/docs/changelog",
+    "reader": "gemini-api-changelog"
+   },
+   "deprecations": {
+    "kind": "page",
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions",
+    "reader": "vertex-model-versions"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@google/genai",
+     "repo": "googleapis/js-genai"
+    },
+    {
+     "eco": "pypi",
+     "name": "google-genai",
+     "repo": "googleapis/python-genai"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@google/genai",
+     "@google/generative-ai"
+    ],
+    "pypi": [
+     "google-genai"
+    ],
+    "hosts": [
+     "generativelanguage.googleapis.com"
+    ],
+    "env": [
+     "GEMINI_"
+    ],
+    "models": [
+     "gemini-",
+     "imagen-",
+     "veo-",
+     "text-embedding-0"
+    ]
+   },
+   "note": "Called through Vertex AI as well: model retirements apply to both."
+  },
+  {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "category": "ai",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.elevenlabs.io/api/v2/summary.json",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@elevenlabs/elevenlabs-js",
+     "repo": "elevenlabs/elevenlabs-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@elevenlabs/",
+     "elevenlabs"
+    ],
+    "hosts": [
+     "api.elevenlabs.io"
+    ]
+   }
+  },
+  {
+   "id": "stripe",
+   "name": "Stripe",
+   "category": "payments",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.stripestatus.com/api/v2/summary.json",
+    "history": "https://www.stripestatus.com/history.rss",
+    "poll": 60
+   },
+   "statusMatch": [
+    "Stripe API",
+    "Stripe core components",
+    "Global payments",
+    "Revenue and finance automation"
+   ],
+   "changelog": {
+    "kind": "page",
+    "url": "https://docs.stripe.com/changelog",
+    "reader": "stripe-api-changelog"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "stripe",
+     "repo": "stripe/stripe-node"
+    },
+    {
+     "eco": "npm",
+     "name": "@stripe/stripe-js",
+     "repo": "stripe/stripe-js"
+    },
+    {
+     "eco": "pypi",
+     "name": "stripe",
+     "repo": "stripe/stripe-python"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "stripe",
+     "@stripe/"
+    ],
+    "pypi": [
+     "stripe"
+    ],
+    "hosts": [
+     "api.stripe.com"
+    ],
+    "env": [
+     "STRIPE_"
+    ],
+    "dns": {
+     "spf": [
+      "stripe.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "revenuecat",
+   "name": "RevenueCat",
+   "category": "payments",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.revenuecat.com/api/v2/summary.json",
+    "history": "https://status.revenuecat.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "swift",
+     "name": "purchases-ios",
+     "repo": "RevenueCat/purchases-ios"
+    }
+   ],
+   "detect": {
+    "swift": [
+     "purchases-ios"
+    ]
+   }
+  },
+  {
+   "id": "shopify",
+   "name": "Shopify",
+   "category": "payments",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.shopifystatus.com/api/v2/summary.json",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@shopify/shopify-api",
+     "repo": "Shopify/shopify-app-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@shopify/"
+    ]
+   }
+  },
+  {
+   "id": "apple-developer",
+   "name": "Apple Developer",
+   "category": "stores",
+   "status": {
+    "kind": "apple-js",
+    "url": "https://www.apple.com/support/systemstatus/data/developer/system_status_en_US.js",
+    "poll": 300,
+    "validators": "last-modified"
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://developer.apple.com/news/rss/news.rss",
+    "poll": 21600
+   },
+   "deprecations": {
+    "kind": "page",
+    "url": "https://developer.apple.com/news/upcoming-requirements/",
+    "reader": "apple-upcoming-requirements"
+   },
+   "detect": {
+    "hosts": [
+     "appstoreconnect.apple.com",
+     "api.storekit.itunes.apple.com"
+    ],
+    "env": [
+     "ASC_"
+    ],
+    "ext": [
+     "storekit",
+     "xcprivacy"
+    ],
+    "commands": [
+     "xcrun altool",
+     "xcrun notarytool",
+     "-exportArchive"
+    ]
+   },
+   "products": [
+    {
+     "id": "app-store-connect",
+     "name": "App Store Connect",
+     "statusMatch": [
+      "App Store Connect"
+     ],
+     "detect": {
+      "hosts": [
+       "appstoreconnect.apple.com"
+      ],
+      "env": [
+       "ASC_"
+      ]
+     }
+    },
+    {
+     "id": "storekit-sandbox",
+     "name": "App Store Sandbox",
+     "statusMatch": [
+      "App Store - Sandbox"
+     ],
+     "detect": {
+      "ext": [
+       "storekit"
+      ]
+     }
+    },
+    {
+     "id": "storekit",
+     "name": "In-App Purchase",
+     "statusMatch": [
+      "App Store - In-App Purchases"
+     ],
+     "detect": {
+      "ext": [
+       "storekit"
+      ]
+     }
+    },
+    {
+     "id": "testflight",
+     "name": "TestFlight",
+     "statusMatch": [
+      "App Store Connect - TestFlight"
+     ],
+     "detect": {}
+    },
+    {
+     "id": "app-upload",
+     "name": "App upload and processing",
+     "statusMatch": [
+      "App Store Connect - App Upload",
+      "App Store Connect - App Processing "
+     ],
+     "detect": {
+      "commands": [
+       "xcrun altool",
+       "-exportArchive"
+      ]
+     }
+    },
+    {
+     "id": "asc-api",
+     "name": "App Store Connect API",
+     "statusMatch": [
+      "App Store Connect API"
+     ],
+     "detect": {
+      "hosts": [
+       "api.appstoreconnect.apple.com"
+      ]
+     }
+    },
+    {
+     "id": "certificates",
+     "name": "Certificates and profiles",
+     "statusMatch": [
+      "Certificates, Identifiers & Profiles",
+      "Provisioning Profile Service"
+     ],
+     "detect": {
+      "ext": [
+       "entitlements"
+      ]
+     }
+    },
+    {
+     "id": "membership",
+     "name": "Developer Program membership",
+     "statusMatch": [
+      "Program Enrollment and Renewals"
+     ],
+     "detect": {
+      "ext": [
+       "xcprivacy"
+      ]
+     }
+    },
+    {
+     "id": "xcode-cloud",
+     "name": "Xcode Cloud",
+     "statusMatch": [
+      "Xcode Cloud"
+     ],
+     "detect": {
+      "dirs": [
+       "ci_scripts/"
+      ]
+     }
+    },
+    {
+     "id": "notary",
+     "name": "Notary service",
+     "statusMatch": [
+      "Developer ID Notary Service"
+     ],
+     "detect": {
+      "commands": [
+       "xcrun notarytool"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "google-workspace",
+   "name": "Google Workspace",
+   "category": "mail",
+   "status": {
+    "kind": "gcp-incidents",
+    "url": "https://www.google.com/appsstatus/dashboard/incidents.json",
+    "poll": 300
+   },
+   "detect": {
+    "hosts": [
+     "gmail.googleapis.com"
+    ],
+    "dns": {
+     "mx": [
+      "google.com",
+      "googlemail.com"
+     ],
+     "spf": [
+      "_spf.google.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "microsoft-365",
+   "name": "Microsoft 365",
+   "category": "mail",
+   "status": {
+    "kind": "page",
+    "url": "https://status.cloud.microsoft",
+    "poll": 300
+   },
+   "detect": {
+    "hosts": [
+     "graph.microsoft.com"
+    ],
+    "dns": {
+     "mx": [
+      "outlook.com"
+     ],
+     "spf": [
+      "spf.protection.outlook.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "sendgrid",
+   "name": "SendGrid",
+   "category": "mail",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.sendgrid.com/api/v2/summary.json",
+    "history": "https://status.sendgrid.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@sendgrid/mail",
+     "repo": "sendgrid/sendgrid-nodejs"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@sendgrid/"
+    ],
+    "hosts": [
+     "api.sendgrid.com"
+    ],
+    "env": [
+     "SENDGRID_"
+    ],
+    "dns": {
+     "mx": [
+      "sendgrid.net"
+     ],
+     "spf": [
+      "sendgrid.net"
+     ]
+    }
+   }
+  },
+  {
+   "id": "resend",
+   "name": "Resend",
+   "category": "mail",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://resend-status.com/api/v2/summary.json",
+    "history": "https://resend-status.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://resend.com/changelog/rss.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "resend",
+     "repo": "resend/resend-node"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "resend"
+    ],
+    "hosts": [
+     "api.resend.com"
+    ],
+    "env": [
+     "RESEND_"
+    ],
+    "dns": {
+     "spf": [
+      "_spf.resend.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "postmark",
+   "name": "Postmark",
+   "category": "mail",
+   "status": {
+    "kind": "page",
+    "url": "https://status.postmarkapp.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "postmark",
+     "repo": "ActiveCampaign/postmark.js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "postmark"
+    ],
+    "dns": {
+     "spf": [
+      "spf.mtasv.net"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mailgun",
+   "name": "Mailgun",
+   "category": "mail",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.mailgun.com/api/v2/summary.json",
+    "history": "https://status.mailgun.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "mailgun.js",
+     "repo": "mailgun/mailgun.js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "mailgun.js"
+    ],
+    "dns": {
+     "mx": [
+      "mailgun.org"
+     ],
+     "spf": [
+      "mailgun.org"
+     ]
+    }
+   }
+  },
+  {
+   "id": "mailchimp",
+   "name": "Mailchimp",
+   "category": "mail",
+   "status": {
+    "kind": "page",
+    "url": "https://status.mailchimp.com",
+    "poll": 300
+   },
+   "detect": {
+    "dns": {
+     "spf": [
+      "servers.mcsv.net",
+      "mandrillapp.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "namecheap",
+   "name": "Namecheap",
+   "category": "dns",
+   "status": {
+    "kind": "page",
+    "url": "https://www.namecheap.com/status-updates/",
+    "poll": 900
+   },
+   "detect": {
+    "dns": {
+     "ns": [
+      "registrar-servers.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "godaddy",
+   "name": "GoDaddy",
+   "category": "dns",
+   "status": {
+    "kind": "page",
+    "url": "https://status.godaddy.com",
+    "poll": 900
+   },
+   "detect": {
+    "dns": {
+     "ns": [
+      "domaincontrol.com"
+     ]
+    }
+   }
+  },
+  {
+   "id": "ns1",
+   "name": "NS1",
+   "category": "dns",
+   "status": {
+    "kind": "page",
+    "url": "https://ns1status.com",
+    "poll": 900
+   },
+   "detect": {
+    "dns": {
+     "ns": [
+      "nsone.net"
+     ]
+    }
+   }
+  },
+  {
+   "id": "github",
+   "name": "GitHub",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.githubstatus.com/api/v2/summary.json",
+    "history": "https://www.githubstatus.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://github.blog/changelog/feed/"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@octokit/rest",
+     "repo": "octokit/rest.js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@octokit/"
+    ],
+    "hosts": [
+     "api.github.com"
+    ],
+    "env": [
+     "GITHUB_"
+    ],
+    "terraform": [
+     "github_"
+    ]
+   },
+   "products": [
+    {
+     "id": "github-actions",
+     "name": "GitHub Actions",
+     "statusMatch": [
+      "Actions"
+     ],
+     "detect": {
+      "dirs": [
+       ".github/workflows/"
+      ]
+     }
+    },
+    {
+     "id": "github-api",
+     "name": "GitHub API",
+     "statusMatch": [
+      "API Requests"
+     ],
+     "detect": {
+      "hosts": [
+       "api.github.com"
+      ],
+      "packages": [
+       "@octokit/"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "gitlab",
+   "name": "GitLab",
+   "category": "code",
+   "status": {
+    "kind": "page",
+    "url": "https://status.gitlab.com",
+    "poll": 300
+   },
+   "detect": {
+    "files": [
+     ".gitlab-ci.yml"
+    ]
+   }
+  },
+  {
+   "id": "circleci",
+   "name": "CircleCI",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.circleci.com/api/v2/summary.json",
+    "history": "https://status.circleci.com/history.rss",
+    "poll": 60
+   },
+   "detect": {
+    "dirs": [
+     ".circleci/"
+    ]
+   }
+  },
+  {
+   "id": "npm",
+   "name": "npm registry",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.npmjs.org/api/v2/summary.json",
+    "history": "https://status.npmjs.org/history.rss",
+    "poll": 60
+   },
+   "detect": {
+    "files": [
+     "package-lock.json"
+    ]
+   }
+  },
+  {
+   "id": "pypi",
+   "name": "PyPI",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.python.org/api/v2/summary.json",
+    "history": "https://status.python.org/history.rss",
+    "poll": 60
+   },
+   "detect": {
+    "files": [
+     "requirements.txt",
+     "pyproject.toml"
+    ]
+   }
+  },
+  {
+   "id": "docker-hub",
+   "name": "Docker Hub",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.dockerstatus.com/api/v2/summary.json",
+    "history": "https://www.dockerstatus.com/history.rss",
+    "poll": 60
+   },
+   "statusMatch": [
+    "Docker Hub Registry",
+    "Docker Authentication",
+    "Docker Hub Automated Builds"
+   ],
+   "detect": {
+    "files": [
+     "Dockerfile"
+    ],
+    "actions": [
+     "docker/"
+    ]
+   }
+  },
+  {
+   "id": "expo",
+   "name": "Expo",
+   "category": "code",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.expo.dev/api/v2/summary.json",
+    "history": "https://status.expo.dev/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "expo",
+     "repo": "expo/expo"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "expo"
+    ]
+   }
+  },
+  {
+   "id": "sentry",
+   "name": "Sentry",
+   "category": "monitoring",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.sentry.io/api/v2/summary.json",
+    "history": "https://status.sentry.io/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://sentry.io/changelog/feed.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@sentry/node",
+     "repo": "getsentry/sentry-javascript"
+    },
+    {
+     "eco": "swift",
+     "name": "sentry-cocoa",
+     "repo": "getsentry/sentry-cocoa"
+    },
+    {
+     "eco": "pypi",
+     "name": "sentry-sdk",
+     "repo": "getsentry/sentry-python"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@sentry/"
+    ],
+    "swift": [
+     "sentry-cocoa"
+    ],
+    "pypi": [
+     "sentry-sdk"
+    ],
+    "hosts": [
+     "sentry.io"
+    ],
+    "env": [
+     "SENTRY_"
+    ],
+    "terraform": [
+     "sentry_"
+    ]
+   }
+  },
+  {
+   "id": "datadog",
+   "name": "Datadog",
+   "category": "monitoring",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.datadoghq.com/api/v2/summary.json",
+    "history": "https://status.datadoghq.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "dd-trace",
+     "repo": "DataDog/dd-trace-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "dd-trace",
+     "@datadog/"
+    ],
+    "terraform": [
+     "datadog_"
+    ]
+   }
+  },
+  {
+   "id": "posthog",
+   "name": "PostHog",
+   "category": "monitoring",
+   "status": {
+    "kind": "page",
+    "url": "https://status.posthog.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "posthog-js",
+     "repo": "PostHog/posthog-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "posthog"
+    ]
+   }
+  },
+  {
+   "id": "mixpanel",
+   "name": "Mixpanel",
+   "category": "monitoring",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://www.mixpanelstatus.com/api/v2/summary.json",
+    "history": "https://www.mixpanelstatus.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "mixpanel-browser",
+     "repo": "mixpanel/mixpanel-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "mixpanel"
+    ]
+   }
+  },
+  {
+   "id": "clerk",
+   "name": "Clerk",
+   "category": "auth",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.clerk.com/api/v2/summary.json",
+    "history": "https://status.clerk.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "atom",
+    "url": "https://clerk.com/changelog/atom.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@clerk/clerk-js",
+     "repo": "clerk/javascript"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@clerk/"
+    ]
+   }
+  },
+  {
+   "id": "auth0",
+   "name": "Auth0",
+   "category": "auth",
+   "status": {
+    "kind": "page",
+    "url": "https://status.auth0.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "auth0",
+     "repo": "auth0/node-auth0"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "auth0"
+    ]
+   }
+  },
+  {
+   "id": "okta",
+   "name": "Okta",
+   "category": "auth",
+   "status": {
+    "kind": "page",
+    "url": "https://status.okta.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@okta/okta-auth-js",
+     "repo": "okta/okta-auth-js"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@okta/"
+    ],
+    "hosts": [
+     "okta.com"
+    ],
+    "env": [
+     "OKTA_"
+    ]
+   }
+  },
+  {
+   "id": "twilio",
+   "name": "Twilio",
+   "category": "messaging",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.twilio.com/api/v2/summary.json",
+    "history": "https://status.twilio.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://www.twilio.com/en-us/changelog/feed"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "twilio",
+     "repo": "twilio/twilio-node"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "twilio"
+    ]
+   }
+  },
+  {
+   "id": "slack",
+   "name": "Slack",
+   "category": "messaging",
+   "status": {
+    "kind": "slack",
+    "url": "https://slack-status.com/api/v2.0.0/current",
+    "poll": 300
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://docs.slack.dev/changelog/rss.xml"
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@slack/web-api",
+     "repo": "slackapi/node-slack-sdk"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@slack/"
+    ],
+    "hosts": [
+     "hooks.slack.com"
+    ],
+    "env": [
+     "SLACK_"
+    ]
+   }
+  },
+  {
+   "id": "algolia",
+   "name": "Algolia",
+   "category": "search",
+   "status": {
+    "kind": "page",
+    "url": "https://status.algolia.com",
+    "poll": 300
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "algoliasearch",
+     "repo": "algolia/algoliasearch-client-javascript"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "algoliasearch"
+    ]
+   }
+  },
+  {
+   "id": "temporal",
+   "name": "Temporal Cloud",
+   "category": "workflows",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.temporal.io/api/v2/summary.json",
+    "history": "https://status.temporal.io/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@temporalio/client",
+     "repo": "temporalio/sdk-typescript"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@temporalio/"
+    ],
+    "pypi": [
+     "temporalio"
+    ],
+    "env": [
+     "TEMPORAL_"
+    ]
+   }
+  },
+  {
+   "id": "linear",
+   "name": "Linear",
+   "category": "tools",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://linearstatus.com/api/v2/summary.json",
+    "history": "https://linearstatus.com/history.rss",
+    "poll": 60
+   },
+   "changelog": {
+    "kind": "rss",
+    "url": "https://linear.app/rss/changelog.xml"
+   },
+   "detect": {
+    "packages": [
+     "@linear/sdk"
+    ]
+   }
+  },
+  {
+   "id": "mux",
+   "name": "Mux",
+   "category": "media",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.mux.com/api/v2/summary.json",
+    "history": "https://status.mux.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "@mux/mux-node",
+     "repo": "muxinc/mux-node-sdk"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "@mux/"
+    ]
+   }
+  },
+  {
+   "id": "cloudinary",
+   "name": "Cloudinary",
+   "category": "media",
+   "status": {
+    "kind": "statuspage",
+    "url": "https://status.cloudinary.com/api/v2/summary.json",
+    "history": "https://status.cloudinary.com/history.rss",
+    "poll": 60
+   },
+   "sdks": [
+    {
+     "eco": "npm",
+     "name": "cloudinary",
+     "repo": "cloudinary/cloudinary_npm"
+    }
+   ],
+   "detect": {
+    "packages": [
+     "cloudinary"
+    ]
+   }
+  }
+ ],
+ "modelFamilies": [
+  {
+   "prefix": "claude-",
+   "vendor": "anthropic",
+   "retirements": "anthropic-deprecations"
+  },
+  {
+   "prefix": "gemini-",
+   "vendor": "gemini-api",
+   "retirements": "vertex-model-versions",
+   "alsoVia": "google-cloud/vertex-ai"
+  },
+  {
+   "prefix": "imagen-",
+   "vendor": "gemini-api",
+   "retirements": "vertex-model-versions",
+   "alsoVia": "google-cloud/vertex-ai"
+  },
+  {
+   "prefix": "veo-",
+   "vendor": "gemini-api",
+   "retirements": "vertex-model-versions",
+   "alsoVia": "google-cloud/vertex-ai"
+  },
+  {
+   "prefix": "text-embedding-0",
+   "vendor": "gemini-api",
+   "retirements": "vertex-model-versions"
+  },
+  {
+   "prefix": "gpt-",
+   "vendor": "openai",
+   "retirements": "openai-deprecations"
+  },
+  {
+   "prefix": "o1-",
+   "vendor": "openai",
+   "retirements": "openai-deprecations"
+  },
+  {
+   "prefix": "o3-",
+   "vendor": "openai",
+   "retirements": "openai-deprecations"
+  },
+  {
+   "prefix": "o4-",
+   "vendor": "openai",
+   "retirements": "openai-deprecations"
+  },
+  {
+   "prefix": "text-embedding-3",
+   "vendor": "openai",
+   "retirements": "openai-deprecations"
+  }
+ ],
+ "modelPattern": "\\b(gemini-[0-9][0-9a-z.\\-]*|imagen-[0-9][0-9a-z.\\-]*|veo-[0-9][0-9a-z.\\-]*|gpt-[0-9][0-9a-z.\\-]*|o[134]-(?:mini|pro|preview)[0-9a-z.\\-]*|text-embedding-[0-9a-z\\-]+|claude-(?:opus|sonnet|haiku|fable)-[0-9][0-9a-z.\\-]*|claude-[0-9](?:-[0-9])?-(?:opus|sonnet|haiku)[0-9a-z.\\-]*)",
+ "runtimes": [
+  {
+   "id": "nodejs",
+   "name": "Node.js",
+   "source": {
+    "kind": "json",
+    "url": "https://raw.githubusercontent.com/nodejs/Release/main/schedule.json",
+    "field": "end"
+   },
+   "fallback": {
+    "kind": "endoflife",
+    "url": "https://endoflife.date/api/nodejs.json"
+   },
+   "detect": {
+    "files": [
+     ".nvmrc",
+     ".node-version"
+    ],
+    "packageEngines": "node",
+    "dockerFrom": [
+     "node:"
+    ]
+   }
+  },
+  {
+   "id": "python",
+   "name": "Python",
+   "source": {
+    "kind": "endoflife",
+    "url": "https://endoflife.date/api/python.json"
+   },
+   "detect": {
+    "files": [
+     ".python-version"
+    ],
+    "dockerFrom": [
+     "python:"
+    ]
+   }
+  },
+  {
+   "id": "macos",
+   "name": "macOS (minimum for Mac apps)",
+   "source": {
+    "kind": "endoflife",
+    "url": "https://endoflife.date/api/macos.json"
+   },
+   "detect": {
+    "plistKey": "LSMinimumSystemVersion",
+    "swiftPlatforms": ".macOS("
+   }
+  },
+  {
+   "id": "xcode-sdk",
+   "name": "Xcode and SDK minimums for App Store uploads",
+   "source": {
+    "kind": "reader",
+    "reader": "apple-upcoming-requirements"
+   },
+   "detect": {
+    "ext": [
+     "xcodeproj"
+    ],
+    "files": [
+     "Package.swift"
+    ]
+   }
+  }
+ ],
+ "technologies": [
+  {
+   "id": "postgresql",
+   "name": "PostgreSQL",
+   "hostedBy": [
+    "google-cloud/cloud-sql",
+    "supabase",
+    "neon",
+    "aws"
+   ],
+   "detect": {
+    "packages": [
+     "pg",
+     "postgres"
+    ],
+    "env": [
+     "PG",
+     "DATABASE_URL"
+    ]
+   }
+  },
+  {
+   "id": "mysql",
+   "name": "MySQL",
+   "hostedBy": [
+    "google-cloud/cloud-sql",
+    "planetscale",
+    "aws"
+   ],
+   "detect": {
+    "packages": [
+     "mysql2",
+     "mysql"
+    ]
+   }
+  },
+  {
+   "id": "redis",
+   "name": "Redis",
+   "hostedBy": [
+    "upstash",
+    "google-cloud",
+    "aws"
+   ],
+   "detect": {
+    "packages": [
+     "redis",
+     "ioredis"
+    ],
+    "env": [
+     "REDIS_"
+    ]
+   }
+  },
+  {
+   "id": "smtp",
+   "name": "Email over SMTP",
+   "hostedBy": [],
+   "detect": {
+    "packages": [
+     "nodemailer"
+    ],
+    "env": [
+     "SMTP_",
+     "MAIL_"
+    ]
+   }
+  }
+ ],
+ "readers": [
+  {
+   "id": "stripe-api-changelog",
+   "url": "https://docs.stripe.com/changelog",
+   "poll": 86400,
+   "gives": "changes"
+  },
+  {
+   "id": "firebase-releases",
+   "url": "https://firebase.google.com/support/releases",
+   "poll": 86400,
+   "gives": "changes"
+  },
+  {
+   "id": "gemini-api-changelog",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "poll": 86400,
+   "gives": "changes"
+  },
+  {
+   "id": "anthropic-deprecations",
+   "url": "https://docs.anthropic.com/en/docs/about-claude/model-deprecations",
+   "poll": 86400,
+   "gives": "retirements"
+  },
+  {
+   "id": "vertex-model-versions",
+   "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions",
+   "poll": 86400,
+   "gives": "retirements"
+  },
+  {
+   "id": "openai-deprecations",
+   "url": "https://platform.openai.com/docs/deprecations",
+   "poll": 86400,
+   "gives": "retirements"
+  },
+  {
+   "id": "apple-upcoming-requirements",
+   "url": "https://developer.apple.com/news/upcoming-requirements/",
+   "poll": 86400,
+   "gives": "requirements"
+  }
+ ],
+ "schema": 1,
+ "serial": 1,
+ "minApp": "1.1",
+ "published": "2026-11-03T05:46:04Z"
+}
