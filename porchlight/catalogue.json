@@ -1,6 +1,6 @@
 {
  "version": 1,
- "built": "2026-10-28",
+ "built": "2026-11-03",
  "vendors": [
   {
    "id": "google-cloud",
@@ -1046,7 +1046,7 @@
    },
    "changelog": {
     "kind": "page",
-    "url": "https://ai.google.dev/gemini-api/docs/changelog",
+    "url": "https://ai.google.dev/gemini-api/docs/changelog.md.txt",
     "reader": "gemini-api-changelog"
    },
    "deprecations": {
@@ -1864,10 +1864,9 @@
    "name": "Datadog",
    "category": "monitoring",
    "status": {
-    "kind": "statuspage",
-    "url": "https://status.datadoghq.com/api/v2/summary.json",
-    "history": "https://status.datadoghq.com/history.rss",
-    "poll": 60
+    "kind": "rss",
+    "url": "https://status.datadoghq.com/history.rss",
+    "poll": 300
    },
    "sdks": [
     {
@@ -2394,7 +2393,7 @@
   },
   {
    "id": "gemini-api-changelog",
-   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog.md.txt",
    "poll": 86400,
    "gives": "changes"
   },
@@ -2424,7 +2423,7 @@
   }
  ],
  "schema": 1,
- "serial": 1,
+ "serial": 2,
  "minApp": "1.1",
- "published": "2026-11-03T05:46:04Z"
+ "published": "2026-11-03T05:57:10Z"
 }
