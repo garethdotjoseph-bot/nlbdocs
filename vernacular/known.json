@@ -1,0 +1,756 @@
+{
+ "version": 1,
+ "built": "from content/src by content/tools/build.py",
+ "sources": [
+  {
+   "id": "apple-dev-rosetta",
+   "title": "About the Rosetta translation environment",
+   "publisher": "Apple Developer documentation",
+   "url": "https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment",
+   "fetched": "2026-11-01",
+   "quote": "Rosetta was designed to make the transition to Apple silicon easier, and will be available through macOS 27 — as a general-purpose tool for Intel apps to help developers complete the migration of their apps. Beyond this timeframe, we will keep a subset of Rosetta functionality aimed at supporting older unmaintained gaming titles, that rely on Intel-based frameworks."
+  },
+  {
+   "id": "apple-support-102527",
+   "title": "Using Intel-based apps on a Mac with Apple silicon",
+   "publisher": "Apple Support (published 21 September 2026)",
+   "url": "https://support.apple.com/en-us/102527",
+   "fetched": "2026-11-01",
+   "quote": "Rosetta is available for any Mac with Apple silicon using macOS 27 or earlier. Starting with macOS 28, the next major macOS release, Rosetta functionality will be available only for certain older, unmaintained games that rely on Intel-based frameworks."
+  },
+  {
+   "id": "apple-support-102527-components",
+   "title": "Using Intel-based apps on a Mac with Apple silicon",
+   "publisher": "Apple Support (published 21 September 2026)",
+   "url": "https://support.apple.com/en-us/102527",
+   "fetched": "2026-11-01",
+   "quote": "Some apps might include or use components, such as extensions or updaters, that need to be updated separately."
+  },
+  {
+   "id": "apple-dev-rosetta-limits",
+   "title": "About the Rosetta translation environment",
+   "publisher": "Apple Developer documentation",
+   "url": "https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment",
+   "fetched": "2026-11-01",
+   "quote": "Rosetta can translate most Intel-based apps, including apps that contain just-in-time (JIT) compilers. However, Rosetta doesn’t translate the following executables: Kernel extensions; Virtual Machine apps that virtualize x86_64 computer platforms."
+  }
+ ],
+ "appleLine": "Apple says Rosetta stays a general tool through macOS 27, and from macOS 28 runs only certain older games.",
+ "sdkYears": {
+  "11": 2020,
+  "12": 2021,
+  "13": 2022,
+  "14": 2023,
+  "15": 2024,
+  "26": 2025,
+  "27": 2026,
+  "10.6": 2009,
+  "10.7": 2011,
+  "10.8": 2012,
+  "10.9": 2013,
+  "10.10": 2014,
+  "10.11": 2015,
+  "10.12": 2016,
+  "10.13": 2017,
+  "10.14": 2018,
+  "10.15": 2019
+ },
+ "vendors": [
+  {
+   "id": "hp",
+   "name": "HP",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/hp",
+     "/Library/Image Capture/Devices/HP",
+     "Hewlett"
+    ],
+    "bundleIdPrefix": [
+     "com.hp."
+    ]
+   },
+   "page": "https://support.hp.com/us-en/drivers",
+   "source": "https://support.hp.com/us-en/drivers",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "canon",
+   "name": "Canon",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Canon",
+     "/Library/Image Capture/Devices/Canon"
+    ],
+    "bundleIdPrefix": [
+     "jp.co.canon.",
+     "com.canon."
+    ]
+   },
+   "page": "https://asia.canon/en/support/mac-os-compatibility-list-for-inkjet-printer-scanner/notice?page=1",
+   "source": "https://asia.canon/en/support/mac-os-compatibility-list-for-inkjet-printer-scanner/notice?page=1",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "epson",
+   "name": "Epson",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/EPSON",
+     "/Library/Image Capture/Devices/EPSON"
+    ],
+    "bundleIdPrefix": [
+     "com.epson."
+    ]
+   },
+   "page": "https://epson.com/Support/wa00908",
+   "source": "https://www.epson.jp/support/misc_t/201130_oshirase.htm",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "brother",
+   "name": "Brother",
+   "kinds": [
+    "printer",
+    "label-printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Brother",
+     "/Library/Image Capture/Devices/Brother"
+    ],
+    "bundleIdPrefix": [
+     "com.brother."
+    ]
+   },
+   "page": "https://support.brother.com/g/b/oscontents.aspx?c=gb&lang=en&ossid=1",
+   "source": "https://support.brother.com/g/b/oscontents.aspx?c=gb&lang=en&ossid=1",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "xerox",
+   "name": "Xerox",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Xerox",
+     "/Library/Printers/FujiXerox",
+     "/Library/Image Capture/Devices/Xerox"
+    ],
+    "bundleIdPrefix": [
+     "com.xerox."
+    ]
+   },
+   "page": "https://www.support.xerox.com/en-us/content/161654",
+   "source": "https://www.support.xerox.com/en-us/content/161654",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "kyocera",
+   "name": "Kyocera",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Kyocera"
+    ],
+    "bundleIdPrefix": [
+     "com.kyocera."
+    ]
+   },
+   "page": "https://kyoceradocumentsolutions.com.au/knowledge/driver-installation-mac",
+   "source": "https://kyoceradocumentsolutions.com.au/knowledge/driver-installation-mac",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "ricoh",
+   "name": "Ricoh",
+   "kinds": [
+    "printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/RICOH"
+    ],
+    "bundleIdPrefix": [
+     "com.ricoh."
+    ]
+   },
+   "page": "https://www.ricoh-usa.com/en/support-and-download",
+   "source": "https://www.ricoh-usa.com/en/support-and-download",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "lexmark",
+   "name": "Lexmark",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Lexmark",
+     "/Library/Image Capture/Devices/Lexmark"
+    ],
+    "bundleIdPrefix": [
+     "com.lexmark."
+    ]
+   },
+   "page": "https://www.lexmark.com/en_us/technical-support/universal-print-driver-support.html",
+   "source": "https://www.lexmark.com/en_us/technical-support/universal-print-driver-support.html",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "samsung-printers",
+   "name": "Samsung printers (now supported by HP)",
+   "kinds": [
+    "printer",
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Samsung"
+    ],
+    "bundleIdPrefix": []
+   },
+   "page": "https://support.hp.com/us-en/drivers",
+   "source": "https://support.hp.com/us-en/drivers",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "dymo",
+   "name": "DYMO",
+   "kinds": [
+    "label-printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/DYMO",
+     "/Library/Application Support/DYMO"
+    ],
+    "bundleIdPrefix": [
+     "com.dymo."
+    ]
+   },
+   "page": "https://www.dymo.com/support?cfid=user-guide",
+   "source": "https://www.dymo.com/support?cfid=user-guide",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "zebra",
+   "name": "Zebra",
+   "kinds": [
+    "label-printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Zebra"
+    ],
+    "bundleIdPrefix": [
+     "com.zebra."
+    ]
+   },
+   "page": "https://support.zebra.com/",
+   "source": "https://supportcommunity.zebra.com/articles/en_US/Knowledge/Install-CUPS-driver-for-Zebra-Printer-in-Mac-OS",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "rollo",
+   "name": "Rollo",
+   "kinds": [
+    "label-printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Rollo"
+    ],
+    "bundleIdPrefix": [
+     "com.rollo."
+    ]
+   },
+   "page": "https://support.rollo.com/support/solutions/articles/29000000945",
+   "source": "https://support.rollo.com/support/solutions/articles/29000000945",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "munbyn",
+   "name": "MUNBYN",
+   "kinds": [
+    "label-printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Munbyn",
+     "/Library/Printers/MUNBYN"
+    ],
+    "bundleIdPrefix": [
+     "com.munbyn."
+    ]
+   },
+   "page": "https://munbyn.com/blogs/tips-and-tricks/how-to-install-munbyn-printer-driver-on-mac",
+   "source": "https://munbyn.com/blogs/tips-and-tricks/how-to-install-munbyn-printer-driver-on-mac",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "vevor",
+   "name": "VEVOR",
+   "kinds": [
+    "label-printer"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Printers/Vevor",
+     "/Library/Printers/VEVOR"
+    ],
+    "bundleIdPrefix": [
+     "com.vevor."
+    ]
+   },
+   "page": "https://www.vevor.com/",
+   "source": "https://www.vevor.com/pages/download-center-label-printer",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "scansnap",
+   "name": "Ricoh PFU ScanSnap (formerly Fujitsu)",
+   "kinds": [
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/PFU",
+     "/Applications/ScanSnap",
+     "/Library/Image Capture/Devices/ScanSnap"
+    ],
+    "bundleIdPrefix": [
+     "jp.co.pfu."
+    ]
+   },
+   "page": "https://scansnap-faq.pfu.ricoh.com/hc/en-us/articles/12744153836185",
+   "source": "https://scansnap-faq.pfu.ricoh.com/hc/en-us/articles/12744153836185",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "plustek",
+   "name": "Plustek",
+   "kinds": [
+    "scanner"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Image Capture/Devices/Plustek",
+     "/Library/Application Support/Plustek"
+    ],
+    "bundleIdPrefix": [
+     "com.plustek."
+    ]
+   },
+   "page": "https://www.plustek.com/en-us/consumer/scanner-driver-software",
+   "source": "https://www.plustek.com/en-us/consumer/scanner-driver-software",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "native-instruments",
+   "name": "Native Instruments",
+   "kinds": [
+    "audio-plugin",
+    "audio-interface"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Native Instruments"
+    ],
+    "bundleIdPrefix": [
+     "com.native-instruments."
+    ]
+   },
+   "page": "https://support.native-instruments.com/support/solutions/articles/69000879298-apple-silicon-compatibility-news",
+   "source": "https://support.native-instruments.com/support/solutions/articles/69000879298-apple-silicon-compatibility-news",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "waves",
+   "name": "Waves",
+   "kinds": [
+    "audio-plugin"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Waves",
+     "/Applications/Waves",
+     "WaveShell"
+    ],
+    "bundleIdPrefix": [
+     "com.WavesAudio."
+    ]
+   },
+   "page": "https://www.waves.com/support/waves-with-apple-m1-processors",
+   "source": "https://www.waves.com/support/waves-with-apple-m1-processors",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "izotope",
+   "name": "iZotope",
+   "kinds": [
+    "audio-plugin"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/iZotope"
+    ],
+    "bundleIdPrefix": [
+     "com.izotope."
+    ]
+   },
+   "page": "https://support.izotope.com/hc/en-us/articles/47669673300621-iZotope-Compatibility-with-Apple-silicon",
+   "source": "https://support.izotope.com/hc/en-us/articles/47669673300621-iZotope-Compatibility-with-Apple-silicon",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "universal-audio",
+   "name": "Universal Audio",
+   "kinds": [
+    "audio-plugin",
+    "audio-interface"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Universal Audio"
+    ],
+    "bundleIdPrefix": [
+     "com.uaudio."
+    ]
+   },
+   "page": "https://help.uaudio.com/hc/en-us/articles/9314999013652-Native-Apple-Silicon-Compatibility",
+   "source": "https://help.uaudio.com/hc/en-us/articles/9314999013652-Native-Apple-Silicon-Compatibility",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "arturia",
+   "name": "Arturia",
+   "kinds": [
+    "audio-plugin",
+    "audio-interface"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Arturia",
+     "/Library/Application Support/Arturia"
+    ],
+    "bundleIdPrefix": [
+     "com.Arturia.",
+     "com.arturia."
+    ]
+   },
+   "page": "https://support.arturia.com/hc/en-us/articles/4414972951570-Compatibility-with-Apple-Silicon-M1-processors-and-above",
+   "source": "https://support.arturia.com/hc/en-us/articles/4414972951570-Compatibility-with-Apple-Silicon-M1-processors-and-above",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "spectrasonics",
+   "name": "Spectrasonics",
+   "kinds": [
+    "audio-plugin"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Spectrasonics"
+    ],
+    "bundleIdPrefix": [
+     "com.spectrasonics."
+    ]
+   },
+   "page": "https://www.spectrasonics.net/support/knowledgebase/article/apple+silicon+compatibility/243/9",
+   "source": "https://www.spectrasonics.net/support/knowledgebase/article/apple+silicon+compatibility/243/9",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "fabfilter",
+   "name": "FabFilter",
+   "kinds": [
+    "audio-plugin"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/FabFilter",
+     "FabFilter"
+    ],
+    "bundleIdPrefix": [
+     "com.fabfilter."
+    ]
+   },
+   "page": "https://www.fabfilter.com/news/1607590800/all-plug-ins-updated-with-native-apple-silicon-support",
+   "source": "https://www.fabfilter.com/news/1607590800/all-plug-ins-updated-with-native-apple-silicon-support",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "focusrite",
+   "name": "Focusrite",
+   "kinds": [
+    "audio-interface",
+    "audio-plugin"
+   ],
+   "match": {
+    "pathContains": [
+     "/Applications/Focusrite Control",
+     "/Library/Application Support/Focusrite"
+    ],
+    "bundleIdPrefix": [
+     "com.focusrite."
+    ]
+   },
+   "page": "https://support.focusrite.com/hc/en-gb/articles/12033372452754-Focusrite-Compatibility-on-macOS",
+   "source": "https://support.focusrite.com/hc/en-gb/articles/12033372452754-Focusrite-Compatibility-on-macOS",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "steinberg",
+   "name": "Steinberg",
+   "kinds": [
+    "audio-plugin",
+    "audio-interface"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Steinberg",
+     "/Library/Audio/Plug-Ins/VST3/Steinberg"
+    ],
+    "bundleIdPrefix": [
+     "com.steinberg."
+    ]
+   },
+   "page": "https://www.steinberg.help/r/macos-big-sur-and-apple-silicon-product-compatibility",
+   "source": "https://www.steinberg.help/r/macos-big-sur-and-apple-silicon-product-compatibility",
+   "reviewed": "2026-11-01"
+  },
+  {
+   "id": "avid",
+   "name": "Avid",
+   "kinds": [
+    "audio-plugin",
+    "audio-interface"
+   ],
+   "match": {
+    "pathContains": [
+     "/Library/Application Support/Avid"
+    ],
+    "bundleIdPrefix": [
+     "com.avid."
+    ]
+   },
+   "page": "https://kb.avid.com/pkb/articles/en_US/Knowledge/Pro-Tools-Apple-Silicon-Support-FAQ",
+   "source": "https://kb.avid.com/pkb/articles/en_US/Knowledge/Pro-Tools-Apple-Silicon-Support-FAQ",
+   "reviewed": "2026-11-01"
+  }
+ ],
+ "apps": [
+  {
+   "bundleId": "com.google.drivefs",
+   "name": "Google Drive",
+   "nativeSince": "52.0",
+   "nativeSinceDate": "2021-10",
+   "page": "https://www.google.com/drive/download/",
+   "source": "https://knowledge.workspace.google.com/admin/drive/google-drive-for-desktop-release-notes-archive",
+   "quote": "Implemented full support for Apple silicon (M1) Mac computers.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.videolan.vlc",
+   "name": "VLC media player",
+   "nativeSince": "3.0.12",
+   "nativeSinceDate": "2021-01",
+   "page": "https://www.videolan.org/vlc/download-macosx.html",
+   "source": "https://www.videolan.org/vlc/releases/3.0.12.html",
+   "quote": "Add native support for Apple Silicon",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.audacityteam.audacity",
+   "name": "Audacity",
+   "nativeSince": "3.2.0",
+   "nativeSinceDate": "2022-09",
+   "page": "https://www.audacityteam.org/download/mac/",
+   "source": "https://github.com/audacity/audacity/releases/tag/Audacity-3.2.0",
+   "quote": "Apple Silicon (arm64) is now supported on macOS",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.gimp.gimp-2.10",
+   "name": "GIMP",
+   "nativeSince": "2.10.32 (revision 1)",
+   "nativeSinceDate": "2022-12",
+   "page": "https://www.gimp.org/downloads/",
+   "source": "https://www.gimp.org/news/2022/12/02/gimp-2.10.32-apple-silicon/",
+   "quote": "we release for the first time ever a stable version of GIMP for this architecture!",
+   "separateDownloads": true,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.mozilla.firefox",
+   "name": "Firefox",
+   "nativeSince": "84.0",
+   "nativeSinceDate": "2020-12",
+   "page": "https://www.mozilla.org/firefox/new/",
+   "source": "https://www.firefox.com/en-US/firefox/84.0/releasenotes/",
+   "quote": "Native support for macOS devices built with Apple Silicon CPUs brings dramatic performance improvements",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.docker.docker",
+   "name": "Docker Desktop",
+   "nativeSince": "3.3.1",
+   "nativeSinceDate": "2021-04",
+   "page": "https://docs.docker.com/desktop/setup/install/mac-install/",
+   "source": "https://docs.docker.com/desktop/previous-versions/3.x-mac/",
+   "quote": "Docker Desktop is now available for Apple silicon as well as Intel chips.",
+   "separateDownloads": true,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.virtualbox.app.VirtualBox",
+   "name": "Oracle VirtualBox",
+   "nativeSince": "7.1.0",
+   "nativeSinceDate": "2024-09",
+   "page": "https://www.virtualbox.org/wiki/Downloads",
+   "source": "https://www.virtualbox.org/wiki/Changelog-7.1",
+   "quote": "macOS/Arm host: Arm virtualization for Linux and BSD VMs",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.parallels.desktop.console",
+   "name": "Parallels Desktop",
+   "nativeSince": "16.5",
+   "nativeSinceDate": "2021-04",
+   "page": "https://www.parallels.com/products/desktop/",
+   "source": "https://kb.parallels.com/en/125038",
+   "quote": "Parallels Desktop 16.5 and newer versions are fully compatible with Mac computers with Apple M1 chips.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.vmware.fusion",
+   "name": "VMware Fusion",
+   "nativeSince": "13.0",
+   "nativeSinceDate": "2022-11",
+   "page": "https://knowledge.broadcom.com/external/article/315602",
+   "source": "https://knowledge.broadcom.com/external/article/315602",
+   "quote": "VMware Fusion 13.0 was the first version to support Apple Silicon Mac systems.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.agilebits.onepassword7",
+   "name": "1Password 7",
+   "nativeSince": "7.8",
+   "nativeSinceDate": "2021-03",
+   "page": "https://1password.com/downloads/mac",
+   "source": "https://app-updates.agilebits.com/product_history/OPM7",
+   "quote": "1Password now runs natively on Apple Silicon.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.obsproject.obs-studio",
+   "name": "OBS Studio",
+   "nativeSince": "28.0",
+   "nativeSinceDate": "2022-08",
+   "page": "https://obsproject.com/download",
+   "source": "https://github.com/obsproject/obs-studio/releases/tag/28.0.0",
+   "quote": "With OBS 28, OBS now has native builds for Apple Silicon systems.",
+   "separateDownloads": true,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "fr.handbrake.HandBrake",
+   "name": "HandBrake",
+   "nativeSince": "1.4.0",
+   "nativeSinceDate": "2021-07",
+   "page": "https://handbrake.fr/downloads.php",
+   "source": "https://handbrake.fr/news.php?article=47",
+   "quote": "Adds support for Apple Silicon based macs.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.blenderfoundation.blender",
+   "name": "Blender",
+   "nativeSince": "2.93.0",
+   "nativeSinceDate": "2021-06",
+   "page": "https://www.blender.org/download/",
+   "source": "https://download.blender.org/release/Blender2.93/blender-2.93.0.md5",
+   "quote": "blender-2.93.0-macos-arm64.dmg",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.unity3d.unityhub",
+   "name": "Unity Hub",
+   "nativeSince": "3.12.0",
+   "nativeSinceDate": "2025-04",
+   "page": "https://unity.com/download",
+   "source": "https://unity.com/unity-hub/release-notes",
+   "quote": "Added native support for Mac ARM64 (Apple Silicon).",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.sublimetext.4",
+   "name": "Sublime Text 4",
+   "nativeSince": "Build 4107",
+   "nativeSinceDate": "2021-05",
+   "page": "https://www.sublimetext.com/download",
+   "source": "https://www.sublimetext.com/blog/articles/sublime-text-4",
+   "quote": "Sublime Text for Mac now includes native support for Apple Silicon processors.",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "com.citrix.receiver.nomas",
+   "name": "Citrix Workspace",
+   "nativeSince": "2210",
+   "nativeSinceDate": "2022-10",
+   "page": "https://www.citrix.com/downloads/workspace-app/mac/",
+   "source": "https://citrix.com/blogs/2022/10/25/native-support-for-citrix-workspace-app-on-macs-with-apple-silicon-m1-series",
+   "quote": "general availability of native support of Citrix Workspace app for macOS 2210 on Macs with Apple Silicon (M1 series)",
+   "separateDownloads": false,
+   "reviewed": "2026-11-01"
+  },
+  {
+   "bundleId": "org.R-project.R",
+   "name": "R (CRAN build)",
+   "nativeSince": "4.1.0",
+   "nativeSinceDate": "2021-05",
+   "page": "https://cran.r-project.org/bin/macosx/",
+   "source": "https://cran.r-project.org/bin/macosx/big-sur-arm64/base/",
+   "quote": "R-4.1.0-arm64.pkg (2021-05-20 07:41)",
+   "separateDownloads": true,
+   "reviewed": "2026-11-01"
+  }
+ ],
+ "schema": 1,
+ "serial": 1,
+ "minApp": "1.1",
+ "published": "2026-11-03T09:41:32Z"
+}

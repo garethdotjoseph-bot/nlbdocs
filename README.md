@@ -28,3 +28,21 @@ console.log(ok ? 'signed by nicoleslittlebrother' : 'NOT signed by nicoleslittle
 ```
 
 Reading these files sends nothing beyond a normal web request to GitHub.
+
+## vernacular/
+
+Vernacular's list of makers and apps: which apps have run natively since which version, the makers' driver
+pages, and Apple's own words on Rosetta, so its advice stays current without an app update. Every sentence
+Vernacular shows, and how it reads your Mac, stays in the app.
+
+- `known.json`: the list. `serial` rises by one with each publish.
+- `known.sig`: an Ed25519 signature over the exact bytes of `known.json`, base64.
+
+Vernacular only uses a list whose signature checks against the public key built into the app:
+
+```
+wV43kBMH3bEQqF8CiIhJrN12nNoB1smG2vv92pHP8yw=
+```
+
+Check it with the Node snippet above, with this key and `vernacular/known.json` and `vernacular/known.sig`.
+Reading these files sends nothing about your Mac.
